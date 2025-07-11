@@ -170,12 +170,20 @@ html {
 .sidebar-discount {
   position: fixed;
   right: 0;
-  top: 50%;
+  top: 50% !important;
   transform: translateY(-50%);
   z-index: 999;
   width: 192px;
   max-height: 400px;
   overflow: hidden;
+}
+
+/* Ensure sidebar stays centered */
+@media (min-width: 1024px) {
+  .sidebar-discount {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
 }
 
 .text-shadow {

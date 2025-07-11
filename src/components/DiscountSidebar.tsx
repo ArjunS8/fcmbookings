@@ -38,7 +38,7 @@ const DiscountSidebar = () => {
   ];
 
   return (
-    <div className={`fixed right-4 top-1/4 transform -translate-y-1/2 z-50 transition-all duration-500 ${
+    <div className={`fixed right-4 top-1/2 transform -translate-y-1/2 z-50 transition-all duration-500 ${
       isMinimized ? 'translate-x-44' : 'translate-x-0'
     } hidden lg:block`}>
       <div className="bg-gradient-to-br from-maroon-900 to-maroon-800 text-white rounded-2xl shadow-2xl relative border-2 border-yellow-400/20">

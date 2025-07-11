@@ -302,7 +302,7 @@ const Home = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 bg-gray-100 relative">
+      <section id="gallery-section" className="py-20 bg-gray-100 relative">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -367,14 +367,19 @@ const Home = () => {
           </div>
 
           <div className="text-center mt-12">
-            <motion.a
-              href="/gallery"
+            <motion.button
+              onClick={() => {
+                const gallerySection = document.getElementById('gallery-section');
+                if (gallerySection) {
+                  gallerySection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block bg-maroon-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-maroon-700 transition-colors duration-300"
+              className="inline-block bg-maroon-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-maroon-700 transition-colors duration-300 cursor-pointer"
             >
               View Full Gallery
-            </motion.a>
+            </motion.button>
           </div>
         </div>
       </section>
