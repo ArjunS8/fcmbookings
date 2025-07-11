@@ -300,6 +300,84 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Gallery Section */}
+      <section className="py-20 bg-gray-100 relative">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-2xl sm:text-4xl font-bold text-maroon-900 mb-4">Our Premium Facilities</h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+              Take a look at our world-class football turf facilities across Chennai
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                src: "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=400",
+                caption: "Premium Football Turf with Floodlights"
+              },
+              {
+                src: "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=400",
+                caption: "State-of-the-art Artificial Grass"
+              },
+              {
+                src: "https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=400",
+                caption: "Professional Standard Football Field"
+              },
+              {
+                src: "https://images.pexels.com/photos/114296/pexels-photo-114296.jpeg?auto=compress&cs=tinysrgb&w=400",
+                caption: "Well-maintained Grass Pitch"
+              },
+              {
+                src: "https://images.pexels.com/photos/1657349/pexels-photo-1657349.jpeg?auto=compress&cs=tinysrgb&w=400",
+                caption: "Modern Turf Facilities"
+              },
+              {
+                src: "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=400",
+                caption: "Evening Football Sessions"
+              }
+            ].map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                className="relative group cursor-pointer"
+              >
+                <div className="aspect-square rounded-xl overflow-hidden shadow-lg">
+                  <img
+                    src={image.src}
+                    alt={image.caption}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <h4 className="font-semibold text-sm sm:text-base">{image.caption}</h4>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <motion.a
+              href="/gallery"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block bg-maroon-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-maroon-700 transition-colors duration-300"
+            >
+              View Full Gallery
+            </motion.a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
